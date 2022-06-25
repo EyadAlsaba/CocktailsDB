@@ -1,6 +1,6 @@
 import { Container, Form, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useState } from "react";
-import { FaBullhorn } from 'react-icons/fa'
+import { MdOutlineNoDrinks } from 'react-icons/md'
 import HomeNavbar from "/components/navbar";
 import Custom404 from "../404";
 import Head from "next/head";
@@ -44,7 +44,7 @@ export default function CocktailsPage({ Cocktails }) {
       <HomeNavbar navbarState={{ navbarState: true }} />
 
       <div className="bg-dark text-light d-block  p-0 ms-1  badge" onClick={() => alcoholic('Non_Alcoholic')}>
-        <FaBullhorn />
+        <MdOutlineNoDrinks />
         <span className="bg-dark text-light">Non-Alcoholic!</span>
       </div>
 
