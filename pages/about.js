@@ -15,11 +15,14 @@ export default function About() {
       </Head>
       <HomeNavbar navbarState={objState.navbarState} />
       <div className="p-2 w-75 mt-5 mx-auto text-center">
-        <Link href={`https://www.thecocktaildb.com/api.php`}>
-          <a className="text-center text-capitalize text-warning bg-dark p-3 my-5 rounded">
-            find out more about the CocktailsDB
-          </a>
-        </Link>
+        <div className="bg-dark p-3 my-5 rounded">
+          <Link href={`https://www.thecocktaildb.com/api.php`}>
+            <a className="text-center text-capitalize text-warning ">
+              find out more about the CocktailsDB
+            </a>
+          </Link>
+        </div>
+
         <p>
           Jelly sweet roll jelly beans biscuit pie macaroon chocolate donut. Carrot cake caramels pie sweet apple pie tiramisu carrot cake. Marzipan marshmallow croissant tootsie roll lollipop. Cupcake lemon drops bear claw gummies. Jelly bear claw gummi bears lollipop cotton candy gummi bears chocolate bar cake cookie. Cupcake muffin danish muffin cookie gummies. Jelly beans tiramisu pudding. Toffee soufflé chocolate cake pastry brownie. Oat cake halvah sweet roll cotton candy croissant lollipop. Macaroon tiramisu chocolate bar candy candy carrot cake jelly sweet. Gummies croissant macaroon dessert. Chocolate cake dragée pie.
         </p>
