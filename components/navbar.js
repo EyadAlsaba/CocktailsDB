@@ -29,9 +29,7 @@ export default function HomeNavbar({ navbarState }) {
         <Dropdown className="d-lg-none d-sm-inline vw-100 text-end position-absolute end-0 pe-3" >
 
           <Dropdown.Toggle className="hum-btn p-0">
-            {
-              navbarState ? <VscChromeClose /> : <BsJustify />
-            }
+            <BsJustify />
           </Dropdown.Toggle>
 
           <Dropdown.Menu className={navbarState ? 'text-center bg-dark' : 'text-center bg-dark bg-opacity-50 '}>
