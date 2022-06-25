@@ -4,7 +4,8 @@ import { VscChromeClose } from 'react-icons/vsc'
 import { useState } from "react";
 
 export default function HomeNavbar({ navbarState }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Navbar className={navbarState ? 'bg-dark sticky-top' : 'bg-dark bg-opacity-50 fixed-top'}>
       <Container className="container-xl" fluid>
@@ -33,7 +34,6 @@ export default function HomeNavbar({ navbarState }) {
             }
           </Dropdown.Toggle>
 
-
           <Dropdown.Menu className={navbarState ? 'text-center bg-dark' : 'text-center bg-dark bg-opacity-50 '}>
             <Dropdown.Item href="/"
               className="text-capitalize m-0 p-0 text-light">
@@ -48,7 +48,6 @@ export default function HomeNavbar({ navbarState }) {
               about
             </Dropdown.Item>
           </Dropdown.Menu>
-
 
         </Dropdown>
 
