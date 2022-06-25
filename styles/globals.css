@@ -119,7 +119,7 @@ body {
 }
 
 @media (max-width:600px) {
-  .nav-wrap-con {
+  #nav-wrap-con {
     display: none !important;
   }
 }

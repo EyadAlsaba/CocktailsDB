@@ -11,7 +11,7 @@ export default function HomeNavbar({ navbarState }) {
           cocktailsDB
         </Navbar.Brand>
 
-        <Container className="nav-wrap-con d-flex justify-content-end m-0 p-0 d-lg-inline-flex d-sm-none">
+        <Container className="d-flex justify-content-end m-0 p-0 d-lg-inline-flex d-sm-none" id="nav-wrap-con">
           <NavLink href="/cocktails"
             className="text-capitalize text-light mx-1">
             cocktails
