@@ -1,7 +1,10 @@
 import { Navbar, Container, NavLink, Dropdown } from "react-bootstrap";
 import { BsJustify } from 'react-icons/bs';
+import { VscChromeClose } from 'react-icons/vsc'
+import { useState } from "react";
 
 export default function HomeNavbar({ navbarState }) {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <Navbar className={navbarState ? 'bg-dark sticky-top' : 'bg-dark bg-opacity-50 fixed-top'}>
       <Container className="container-xl" fluid>
@@ -22,10 +25,12 @@ export default function HomeNavbar({ navbarState }) {
           </NavLink>
         </Container>
 
-        <Dropdown className="d-lg-none d-sm-inline vw-100 text-end position-absolute end-0 pe-3">
+        <Dropdown className="d-lg-none d-sm-inline vw-100 text-end position-absolute end-0 pe-3" >
 
-          <Dropdown.Toggle className="hum-btn fs-1 p-0">
-            <BsJustify />
+          <Dropdown.Toggle className="hum-btn p-0" onClick={() => setIsOpen(!isOpen)}>
+            {
+              isOpen ? <VscChromeClose /> : <BsJustify />
+            }
           </Dropdown.Toggle>
 
 
