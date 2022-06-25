@@ -45,7 +45,7 @@ export default function CocktailsPage({ Cocktails }) {
 
       <div className="bg-dark text-light d-block  p-0 ms-1  badge" onClick={() => alcoholic('Non_Alcoholic')}>
         <FaBullhorn />
-        <span className="bg-dark text-light">None-Alcoholic!</span>
+        <span className="bg-dark text-light">Non-Alcoholic!</span>
       </div>
 
       <Container className="m-0 p-0 my-5" fluid >
@@ -69,11 +69,11 @@ export default function CocktailsPage({ Cocktails }) {
                         drink.strAlcoholic ?
                           <ListGroupItem>{drink.strAlcoholic}</ListGroupItem>
                           :
-                          <ListGroupItem>Non alcoholic</ListGroupItem>
+                          <ListGroupItem>Non-alcoholic</ListGroupItem>
                       }
                       <ListGroupItem>
                         <Card.Link href={`cocktails/${drink.idDrink}`} className="text-decoration-none">
-                          <Card.Text>{"Detail's"}</Card.Text>
+                          <Card.Text>Details</Card.Text>
                         </Card.Link></ListGroupItem>
                     </ListGroup>
                   </Card.Body>
