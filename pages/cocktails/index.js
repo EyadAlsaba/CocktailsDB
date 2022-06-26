@@ -1,6 +1,7 @@
 import { Container, Form, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useState } from "react";
 import { MdOutlineNoDrinks } from 'react-icons/md'
+import { BiDrink } from 'react-icons/bi'
 import HomeNavbar from "/components/navbar";
 import Custom404 from "../404";
 import Head from "next/head";
@@ -8,6 +9,8 @@ import Footer from "../../components/footer";
 
 export default function CocktailsPage({ Cocktails }) {
   const [data, setData] = useState(Cocktails);
+  const [type, setType] = useState('');
+  const [switcher, setSwitcher] = useState(true);
 
   async function handleUserQuery(e) {
     e.preventDefault();
@@ -27,10 +30,15 @@ export default function CocktailsPage({ Cocktails }) {
     const CocktailsQuery = await response.json();
 
     if (CocktailsQuery.drinks !== null || undefined) {
-      setData(CocktailsQuery)
-    } else {
-      setData(null)
+      setData(CocktailsQuery);
+      setType(userQuery)
     }
+
+    // if (userQuery == "Non_Alcoholic") {
+    //   setSwitcher(true)
+    // } else {
+    //   setSwitcher(false)
+    // }
   }
 
   return (
@@ -43,9 +51,14 @@ export default function CocktailsPage({ Cocktails }) {
 
       <HomeNavbar navbarState={{ navbarState: true }} />
 
-      <div className="bg-dark text-light d-block  p-0 ms-1  badge" onClick={() => alcoholic('Non_Alcoholic')}>
-        <MdOutlineNoDrinks />
-        <span className="bg-dark text-light">Non-Alcoholic!</span>
+      <div className="bg-dark text-light d-block  p-0 ms-1  badge" onClick={() => {
+        setSwitcher(!switcher);
+        switcher ? alcoholic('Non_Alcoholic') : alcoholic('Alcoholic')
+      }}>
+        {
+          switcher ? <MdOutlineNoDrinks /> : <BiDrink />
+        }
+        <span className="bg-dark text-light">{switcher ? 'Non Alcoholic' : 'Alcoholic'}</span>
       </div>
 
       <Container className="m-0 p-0 my-5" fluid >
@@ -69,7 +82,7 @@ export default function CocktailsPage({ Cocktails }) {
                         drink.strAlcoholic ?
                           <ListGroupItem>{drink.strAlcoholic}</ListGroupItem>
                           :
-                          <ListGroupItem>Non-alcoholic</ListGroupItem>
+                          <ListGroupItem>{switcher ? 'Alcoholic' : 'Non Alcoholic'}</ListGroupItem>
                       }
                       <ListGroupItem>
                         <Card.Link href={`cocktails/${drink.idDrink}`} className="text-decoration-none">

@@ -16,9 +16,9 @@ export default function About() {
       <HomeNavbar navbarState={objState.navbarState} />
       <div className="p-2 w-75 mt-5 mx-auto text-center">
         <div className="bg-dark p-3 my-5 rounded">
-          <Link href={`https://www.thecocktaildb.com/api.php`}>
-            <a className="text-center text-capitalize text-warning ">
-              find out more about the CocktailsDB
+          <Link href={`https://www.thecocktaildb.com/api.php`} >
+            <a className="text-center text-capitalize text-warning text-decoration-none" target='_blank'>
+              find out more about the CocktailsDB API
             </a>
           </Link>
         </div>

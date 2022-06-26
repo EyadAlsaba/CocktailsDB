@@ -7,11 +7,11 @@ export default function HomeNavbar({ navbarState }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Navbar className={navbarState ? 'bg-dark sticky-top' : 'bg-dark bg-opacity-50 fixed-top'}>
+    <Navbar className={navbarState ? 'bg-dark sticky-top p-0' : 'bg-dark bg-opacity-50 fixed-top p-0'}>
       <Container className="container-xl" fluid>
 
         <Navbar.Brand href="/"
-          className="text-capitalize text-light brand">
+          className="text-capitalize text-light brand p-0">
           cocktailsDB
         </Navbar.Brand>
 
@@ -26,25 +26,25 @@ export default function HomeNavbar({ navbarState }) {
           </NavLink>
         </Container>
 
-        <Dropdown className="d-lg-none d-sm-inline vw-100 text-end position-absolute end-0 pe-3" onClick={() => setIsOpen(!isOpen)}>
+        <Dropdown autoClose={false} className="d-lg-none d-sm-inline text-end position-absolute end-0 m-0 p-0" onClick={() => setIsOpen(!isOpen)}>
 
-          <Dropdown.Toggle className="hum-btn p-0">
+          <Dropdown.Toggle className="hum-btn p-0 me-3">
             {
               isOpen ? <VscChromeClose /> : <BsJustify />
             }
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className={navbarState ? 'text-center bg-dark' : 'text-center bg-dark bg-opacity-50 '}>
+          <Dropdown.Menu align={'end'} className={navbarState ? 'text-center bg-dark vw-100' : 'text-center bg-dark bg-opacity-50 vw-100'}>
             <Dropdown.Item href="/"
-              className="text-capitalize m-0 p-0 text-light">
+              className="text-capitalize m-0 p-1 text-light">
               home
             </Dropdown.Item>
             <Dropdown.Item href="/cocktails"
-              className="text-capitalize m-0 p-0 text-light">
+              className="text-capitalize m-0 p-1 text-light">
               cocktails
             </Dropdown.Item>
             <Dropdown.Item href="/about"
-              className="text-capitalize m-0 p-0 text-light">
+              className="text-capitalize m-0 p-1 text-light">
               about
             </Dropdown.Item>
           </Dropdown.Menu>
