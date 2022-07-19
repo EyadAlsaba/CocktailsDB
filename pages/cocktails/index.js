@@ -33,12 +33,6 @@ export default function CocktailsPage({ Cocktails }) {
       setData(CocktailsQuery);
       setType(userQuery)
     }
-
-    // if (userQuery == "Non_Alcoholic") {
-    //   setSwitcher(true)
-    // } else {
-    //   setSwitcher(false)
-    // }
   }
 
   return (
